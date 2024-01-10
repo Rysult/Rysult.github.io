@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="author" content="Alireza Gholizadeh" />  
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+            />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"rel="stylesheet"/>
+            <link href="./styles.css" rel="stylesheet" />
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            * {
+                box-sizing: border-box;
+            }
+
+            button {
+                border: 0;
+                padding: 0;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .navbar,
+            .navbar-burger,
+            .menu,
+            .background {
+                position: fixed;
+            }
+
+            body.open .background {
+                filter: blur(20px);
+            }
+
+            .navbar {
+                z-index: 1;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                height: 72px;
+                padding-left: 20px;
+                padding-right: 72px;
+                background: #004F9E;
+                color: #f9f9f9;
+            }
+
+            .navbar > button {
+                font-size: 28px;
+            }
+
+            .navbar-logo {
+                height: 50px;
+            }
+
+            .navbar-burger {
+                z-index: 3;
+                top: 0;
+                right: 0;
+                display: grid;
+                place-items: center;
+                width: 72px;
+                height: 72px;
+                background-image: url("./assets/menu.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            body.open .navbar-burger {
+                background-image: url("./assets/close.svg");
+            }
+
+            .navbar-search {
+                border: 0;
+                height: 40px;
+                background: #004F9E url("assets/search.svg");
+                background-repeat: no-repeat;
+                background-position: 10px 50%;
+                border: 0;
+                border-radius: 6px;
+                padding-left: 36px;
+                width: 180px;
+                font-size: 16px;
+                font-family: "Arial";
+            }
+
+            .navbar-search::placeholder {
+                color: #DDC685;
+            }
+
+            input.navbar-search {
+                background-color:#004F9E;
+                color: #DDC685;
+            }
+
+            .menu {
+                z-index: 2;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 32px;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.5s;
+            }
+
+            body.open .menu {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .menu > a {
+                color: #DDC685;
+                font-size: 32px;
+                font-family: "Arial";
+                text-decoration: none;
+            }
+
+            body.open .menu > a {
+                animation: appear 0.3s both;
+            }
+
+            .max-w-4xl {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 128px; 
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            .title{
+                font-size:50px;
+                text-align: center;
+            }
+            .example1 img{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 60px;
+                margin-right: 20px;
+            }
+
+            .example2 img{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 60px;
+                margin-right: 20px;
+            }
+            .example3 img{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 60px;
+                margin-right: 20px;
+            }
+
+            .Final{
+                font-size:50px;
+                text-align: center;
+            }
+            @media (max-width: 500px) {
+            img {
+                width: 100%; 
+                height: auto;
+            }
+              </style>
+    </head>
+    <body class="font-sans bg-gray-200 antialiased text-gray-900 leading-normal">
+        <div class="background"></div>
+        <nav class="navbar">
+            <img class="navbar-logo" src="Home.img/RT.png" />
+            <input type="text" placeholder="Search" class="navbar-search"/>
+        </nav>
+        <button class="navbar-burger" onclick="toggleMenu()"></button>
+        <nav class="menu">
+            <a href="index.html" style="animation-delay: 0.1s">Home</a>
+            <a href="AboutMe.html" style="animation-delay: 0.2s">About me</a>
+            <a href="Design.html" style="animation-delay: 0.3s">Design</a>
+            <a href="Application.html" style="animation-delay: 0.4s">Applications</a>
+            <a href="ContactMe.html" style="animation-delay: 0.5s">Contact Me</a>
+        </nav>
+        
+        <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-128 lg:my-0">
+        <div class="container-fluid mt-3">
+            <div>
+                <h2 style="font-weight: bold">My Childhood</h2>
+                <p><font size="+1">As a child growing up, i always had a fascination for the digital world, unike many of my peers. I would stay home and learn about the mechanics of many childhood games.</font></p>
+                 <p><font size="+1">Joining Science Club in Primary school made me discover a world of possibilities and learning about science further propelled my interest into discovery.</font></p>
+                 <p><font size="+1">As i continued exploring, i joined media club in secondary school to get myself in-tuned with the technical and digital side of this world of information technology.</font></p>
+                <hr>
+            </div>
+        </div>
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-3">
+                    </div>
+                    <h2 style="font-weight: bold">Being in Media Club</h2>
+                    <a href="AboutMe/mediaclub.png" target="_blank">
+                        <img src="AboutMe/mediaclub.png" alt="media" title="Ship1" height="615" width="1043" /></a>
+                </div>
+            </div>
+            <br>
+             <p><font size="+1">From the technicality of the audio mixer to the complexity of a good photograph. Media club really widen my eyes and allowed me to showcase and hone my skills in the artistic field.</font></p>
+             <p><font size="+1">When we are not actively participating with school events, we are honing our skills in design by making custom cards for the needy or elderly.</font></p>
+             <p><font size="+1">The most major takeaway apart from working as a team on events was the workshops and lessons i attended that equipped me with the skills of adobe programs.</font></p>
+             <p><font size="+1">like <span style="color:red;font-weight: bold">Adobe Photoshop</span>, <span style="color:red;font-weight: bold">Adobe Illustrator</span> and the online card creator <span style="color:red;font-weight: bold">Canva</span></font>.</p>
+             <hr>
+        
+         <div class="container-fluid mt-3">
+            <div>
+                <br>
+                <h2 style="font-weight: bold">My Present</h2>
+                <p><font size="+1">It was in secondary school while in media club that i started learning the inner workings of modeling. Slowly i became fascinated with the idea and started modeling</font></p>
+                 <p><font size="+1">I would spent countless afternoons after school to model anything i had a interest in on this program called Roblox Studios</font></p>
+                 <p><font size="+1">Now as i have picked up skills in various coding languages i hope that together with the skills i have in modeling, i can create a game. That is a goal i have given myself</font></p>
+                <hr>
+            </div>
+        </div>
+         <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-3">
+                    </div>
+                    <h2 style="font-weight: bold">Being in Digital Design and Development</h2>
+                </div>
+                    <a href="AboutMe/RepublicPoly.png" target="_blank">
+                        <img src="AboutMe/RepublicPoly.png" alt="media" title="Ship1" height="615" width="1043" /></a>
+            <br>
+            <br>
+             <p><font size="+1">Now that im currently a Republic Poly student, i am adapting to the teaching style to the best of my ability and constantly yearn to better myself.</font></p>
+             <p><font size="+1">Being in a diploma catered to Digital Design and Development, i have learned fundamental skills and acquired substantial knowledge with for useful programs and applications.</font></p>
+             <p><font size="+1">I constantly look to find out solutions and actively help with my teammates if they face difficulties. Some of the programs and applications i have learnt includes</font></p>
+             <p><font size="+1">App-based applications like <span style="color:red;font-weight: bold">Android Studios</span> and Database applications like the <span style="color:red;font-weight: bold">SQL Workbench</span> and Virtual software like <span style="color:red;font-weight: bold">Debian</span></font>.</p>
+             <hr>
+         </div>
+    </div>
+  <script type="text/javascript">
+            const toggleMenu = () => {
+        document.body.classList.toggle("open");
+      };
+        </script>
