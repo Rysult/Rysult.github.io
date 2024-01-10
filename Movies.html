@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="author" content="Alireza Gholizadeh" />  
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+            />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"rel="stylesheet"/>
+        <link href="./styles.css" rel="stylesheet" />
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            * {
+                box-sizing: border-box;
+            }
+
+            button {
+                border: 0;
+                padding: 0;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .navbar,
+            .navbar-burger,
+            .menu,
+            .background {
+                position: fixed;
+            }
+
+            body.open .background {
+                filter: blur(20px);
+            }
+
+            .navbar {
+                z-index: 1;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                height: 72px;
+                padding-left: 20px;
+                padding-right: 72px;
+                background: #004F9E;
+                color: #f9f9f9;
+            }
+
+            .navbar > button {
+                font-size: 28px;
+            }
+
+            .navbar-logo {
+                height: 50px;
+            }
+
+            .navbar-burger {
+                z-index: 3;
+                top: 0;
+                right: 0;
+                display: grid;
+                place-items: center;
+                width: 72px;
+                height: 72px;
+                background-image: url("./assets/menu.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            body.open .navbar-burger {
+                background-image: url("./assets/close.svg");
+            }
+
+            .navbar-search {
+                border: 0;
+                height: 40px;
+                background: #004F9E url("assets/search.svg");
+                background-repeat: no-repeat;
+                background-position: 10px 50%;
+                border: 0;
+                border-radius: 6px;
+                padding-left: 36px;
+                width: 180px;
+                font-size: 16px;
+                font-family: "Arial";
+            }
+
+            .navbar-search::placeholder {
+                color: #DDC685;
+            }
+
+            input.navbar-search {
+                background-color:#004F9E;
+                color: #DDC685;
+            }
+
+            .menu {
+                z-index: 2;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 32px;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.5s;
+            }
+
+            body.open .menu {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .menu > a {
+                color: #DDC685;
+                font-size: 32px;
+                font-family: "Arial";
+                text-decoration: none;
+            }
+
+            body.open .menu > a {
+                animation: appear 0.3s both;
+            }
+
+            .max-w-4xl {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 128px; 
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            .Title{
+                font-size:50px;           
+            }
+            .example1{
+                text-align:center;
+            }
+            .example1 img{
+                width:100%;
+            }
+
+            .example2 img{
+                width:100%;
+            }
+            .example3 img{
+                width:100%;
+            }
+            .example4 img{
+                width:100%;
+            }
+
+            .example5 img{
+                width:100%;
+            }
+            .example6 img{
+                width:100%;
+            }
+
+            .Final{
+                font-size:50px;
+                text-align: center;
+            }
+
+            @media (max-width: 500px) {
+                img {
+                    width: 100%; 
+                    height: auto;
+                }
+
+            </style>
+        </head>
+        <body class="font-sans bg-gray-200 antialiased text-gray-900 leading-normal">
+            <div class="background"></div>
+            <nav class="navbar">
+                <img class="navbar-logo" src="Home.img/RT.png" />
+                <input type="text" placeholder="Search" class="navbar-search"/>
+            </nav>
+            <button class="navbar-burger" onclick="toggleMenu()"></button>
+            <nav class="menu">
+                <a href="index.html" style="animation-delay: 0.1s">Home</a>
+                <a href="AboutMe.html" style="animation-delay: 0.2s">About me</a>
+                <a href="Design.html" style="animation-delay: 0.3s">Design</a>
+                <a href="Application.html" style="animation-delay: 0.4s">Applications</a>
+                <a href="ContactMe.html" style="animation-delay: 0.5s">Contact Me</a>
+            </nav>
+
+            <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-128 lg:my-0">
+                <div class="Title">
+                    <b>Movie Website</b>
+                </div>
+                
+
+                <div class="example1"/>
+                <div style="display:inline-block;vertical-align:top;">
+                    <hr>
+                    <h3 style="font-weight: bold">Registration/Log In</h3>
+                    <img src="Movie/RegistrationPage.png" alt="Registration" />
+                </div>
+                 <div class="example2"/>
+                <div style="display:inline-block;">
+                    </br>
+                    <p>Before a User can see the Movielist, they will have to register a account</p>
+                    <p>This is the required details to register a account</p>
+                    <p>Upon Successful registration, they will be prompted to login</p>
+                    <img src="Movie/LoginPage.png" alt="Login" />
+                    <img src="Movie/usernameDatabase.png" alt="Login" />
+                    <p>Once logged in, the username will be fetched from the SQL Database and displayed</p>
+                    <hr>
+                </div>
+                <div class="example3"/>
+                <div style="display:inline-block;vertical-align:top;">
+                    <h3 style="font-weight: bold">Profile</h3>
+                    <img src="Movie/Profile.png" alt="Profile" />
+                    <img src="Movie/usernameDatabase.png" alt="UsernameDatabase" />
+                </div>
+                <div style="display:inline-block;">
+                    </br>
+                    <p>After the User Log In, the Navigation bar will change to show the "Profile", "Movie List", "Add Review" and "Logout" Pages</p>
+                    <p>When the user clicks the "Profile" Page, a short description of the user will be taken and displayed from the Username Database</p>
+                    <hr>
+                </div>
+                <div class="example4"/>
+                <div style="display:inline-block;vertical-align:top;">
+                    <h3 style="font-weight: bold">MovieList</h3>
+                    <img src="Movie/MovieList(No Search).png" alt="Registration" />
+                </div>
+                <div style="display:inline-block;">
+                    </br>
+                    <p>After a user is directed to the Movie List page, they have the option of searching for a movie</p>
+                    <p>They have to type in the Movie's TItle</p>
+                    <img src="Movie/MovieList(Search).png" alt="Login" />
+                    <img src="Movie/MovieDatabase.png" alt="Login" />
+                    <p>A Database will be scanned and if successful will show the movie being searched</p>
+                    <hr>
+                </div>
+                <div class="example5"/>
+                <div style="display:inline-block;vertical-align:top;">
+                    <h3 style="font-weight: bold">Description</h3>
+                    <img src="Movie/MovieList(No Search).png" alt="Registration" />
+                </div>
+                <div style="display:inline-block;">
+                    </br>
+                    <p>Once you choose the movie, you will be redirected to a page of the movie's description</p>
+                    <p>the description is taken from the database</p>
+                    <img src="Movie/MovieDesc.png" alt="MovieListDesc" />
+                    <img src="Movie/MovieDatabase.png" alt="MovieDatabase" />
+                    <hr>
+                </div>
+                <div class="example6"/>
+                <div style="display:inline-block;vertical-align:top;">
+                    <h3 style="font-weight: bold">Movie Reviews</h3>
+                    <img src="Movie/MovieReview(PreUpdate).png" alt="MovieReviewPre" />
+                    <img src="Movie/ReviewDatabase(PreUpdate).png" alt="ReviewDatabasePre" />
+                </div>
+                <div style="display:inline-block;">
+                    </br>
+                    <p>After the user has seen the description, the user can proceed to the page where it will list reviews</p>
+                    <p>the reviews are for the specific Movie according to the Movie Id</p>
+                    <p>In this example, the Movie Id for John Wick is 1</p>
+                    <img src="Movie/AddReview.png" alt="AddReview" />
+                    <p>From the Navigation Bar, the user can add a review to the specific movie by the "Add Review" button</p>
+                    <img src="Movie/MovieReview(PostUpdate).png" alt="MovieReviewPost" />
+                    <img src="Movie/ReviewDatabase(PostUpdate).png" alt="ReviewDatabasePost" />
+                    <p>After doing so the New Review will be added into the Database and be shown in the Movie Reviews</p>
+                    <p>The User will then have the option to either delete or Edit the Movie's Review</p>
+                    <hr>
+                </div>
+                <div class="example6"/>
+                <div style="display:inline-block;vertical-align:top;">
+                    <h3 style="font-weight: bold">Logout</h3>
+                    <img src="Movie/LoginPrompt.png" alt="LoginPrompt" />
+                </div>
+                <div style="display:inline-block;">
+                    </br>
+                    <p>The Final Page is the "Logout" page, after the user clicks it, a prompt will tell the user if they want to confirm to logout</p>
+                    <p>Once they do, they will be redirected to the Login Page and the Navigation Bar will return to only show the "Registration" , "Login" and "Movie List" Page</p>
+                    <hr>
+                </div>
+
+                <script type="text/javascript">
+                    const toggleMenu = () => {
+                        document.body.classList.toggle("open");
+                    };
+                </script>
